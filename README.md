@@ -14,6 +14,16 @@ with `make debug`) and runs `cppcheck` and `valgrind` to aid in the development
 process
 * `make zip` - Builds a ZIP file of all source code and the Makefile
 
+Requirements
+============
+
+This project depends on several packages in order to be fully functional:
+
+* `build-essential` - This provides a compiler and the `make` command
+* `cppcheck` - Used in `make test` to provide suggestions for your code
+* `valgrind` - Used to test your program for memory leaks using `make test`
+* `zip` - Used to make the ZIP file with `make zip`
+
 Usage
 =====
 
@@ -23,7 +33,7 @@ To use this project, hard-link to the Makefile in your project root.  Example:
 ln /path/to/Makefile ./Makefile
 ```
 
-Note:  a hard-link is used so that git does not track the Makefile in your 
+Note:  a hard-link is used so that git does not track the Makefile in your
 project as a symlink.  Hard-links are detected as regular files by git.
 
 Configuration
