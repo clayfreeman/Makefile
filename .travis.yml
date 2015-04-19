@@ -8,6 +8,5 @@ before_install:
 
 install:
 - sudo apt-get install -qq g++-4.9
-- export CXX="g++-4.9"
 
-script: cd tests && make clean debug && ./main
+script: cd tests && make CXX=g++-4.9 clean debug && ./main
