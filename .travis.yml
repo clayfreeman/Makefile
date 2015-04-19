@@ -1,5 +1,6 @@
 language: cpp
 compiler: g++
+sudo: required
 
 before_install:
 - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
