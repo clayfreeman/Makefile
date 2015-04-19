@@ -41,18 +41,18 @@ Configuration
 
 Makefile has various configuration facilities available:
 
-## .Makefile-libs
+## `.Makefile-libs`
 
 The `.Makefile-libs` config is a file that should contain a string of libraries
 to compile against.  Example:  `-ldl -levent2 -letc`
 
-## .Makefile-modsdir
+## `.Makefile-modsdir`
 
 The `.Makefile-mods` config is a file that should contain a relative path to a
 directory that should be recursively compiled as shared objects for dynamic
 linking at runtime.  Example:  `modules`
 
-## .Makefile-out
+## `.Makefile-out`
 
 The `.Makefile-out` config is a file that holds the desired name of the
 resulting binary after successful compilation.  Example:  `main` or `a.out`
