@@ -1,4 +1,4 @@
-Makefile [![Build Status](http://bit.ly/1zbf7eF)](http://bit.ly/1ElwCbn)
+Makefile [![Build Status](http://bit.ly/1Mh3MO8)](http://bit.ly/1DrgAdK)
 ========
 
 This project is a generic/dynamic Makefile compatible with OS X and Linux for
