@@ -8,6 +8,7 @@
  * @date       April 15, 2015
  */
 
+#include <assert.h>
 #include <dlfcn.h>
 #include "../include/TestClass.hpp"
 #include "../modules/include/TestModule.hpp"
@@ -44,7 +45,9 @@ TestClass::~TestClass() {
  */
 void TestClass::callModule() {
   // Fetch a pointer to the helper function "_load"
-  TestModule* (*m)() = (TestModule* (*)())dlsym(this->dlhandle, "_load");
+  assert(sizeof(void*) == sizeof(void (*)()));
+  ISOFunction ptr{dlsym(this->dlhandle, "_load")};
+  TestModule* (*m)() = reinterpret_cast<TestModule* (*)()>(ptr.f);
   // Create a TestModule and immediately destroy it (to call the constructor to
   // prevent this example from requiring inheritance)
   delete m();

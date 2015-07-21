@@ -11,6 +11,11 @@
 #ifndef _TESTCLASS_HPP
 #define _TESTCLASS_HPP
 
+union ISOFunction {
+  void* o;
+  void (*f)();
+};
+
 class TestClass {
   private:
     void* dlhandle = nullptr;
