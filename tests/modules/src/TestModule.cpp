@@ -18,8 +18,8 @@
  * Prints the time and number of seconds since the Unix epoch in local time
  */
 TestModule::TestModule() {
-  std::time_t result = std::time(nullptr);
-  std::cout << std::asctime(std::localtime(&result))
+  time_t result = time(nullptr);
+  std::cout << localtime_r(&result, nullptr)
             << result << " seconds since the Epoch\n";
 }
 
