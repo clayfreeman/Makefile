@@ -18,9 +18,14 @@
  * Prints the time and number of seconds since the Unix epoch in local time
  */
 TestModule::TestModule() {
-  time_t result = time(nullptr);
-  std::cout << localtime_r(&result, nullptr)
-            << result << " seconds since the Epoch\n";
+  struct tm* result = nullptr;
+  time_t raw = 0;
+
+  // Fetch time
+  time(&raw);
+  localtime_r(&raw, result);
+
+  std::cout << mktime(result) << " seconds since the Epoch\n";
 }
 
 /**
