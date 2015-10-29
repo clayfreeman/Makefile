@@ -5,4 +5,4 @@ sudo: false
 install:
 - mv tests/main.cpp.example tests/main.cpp
 
-script: cd tests && make clean debug && ./main
+script: cd tests && make CXX=g++ clean debug && ./main
