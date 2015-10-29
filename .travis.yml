@@ -1,13 +1,8 @@
 language: cpp
 compiler: g++
-sudo: required
-
-before_install:
-- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-- sudo apt-get update -qq
+sudo: false
 
 install:
-- sudo apt-get install -qq g++-4.9
 - mv tests/main.cpp.example tests/main.cpp
 
-script: cd tests && make CXX=g++-4.9 clean debug && ./main
+script: cd tests && make clean debug && ./main
