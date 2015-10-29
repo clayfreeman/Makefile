@@ -2,7 +2,14 @@ language: cpp
 compiler: g++-stable
 sudo: false
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.9
+
 install:
 - mv tests/main.cpp.example tests/main.cpp
 
-script: cd tests && make clean debug && ./main
+script: cd tests && make CXX=g++-4.9 clean debug && ./main
