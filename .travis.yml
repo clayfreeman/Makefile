@@ -1,5 +1,5 @@
 language: cpp
-compiler: g++-stable
+compiler: g++-4.9
 sudo: false
 
 addons:
@@ -12,4 +12,4 @@ addons:
 install:
 - mv tests/main.cpp.example tests/main.cpp
 
-script: cd tests && make CXX=g++-4.9 clean debug && ./main
+script: cd tests && make clean debug && ./main
