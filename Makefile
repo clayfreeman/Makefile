@@ -120,7 +120,11 @@ endif
 # Links your application.  Depends on all applicable .o files
 $(OUT):		$(DEPENDO)
 	@$(BASH) $(BASHFLAGS) "echo -e \"[$(OK)LNK$(RESET)] $@ ...\""
+ifneq ($(shell uname),Darwin)
 	@$(CXX) $(CXXFLAGS) -Wl,--export-dynamic -o $@ $^ $(LIBS)
+else
+	@$(CXX) $(CXXFLAGS) -Wl,-export_dynamic -o $@ $^ $(LIBS)
+endif
 
 # Builds a ZIP file from your source files and Makefile
 $(OUT).zip:	$(DEPENDCPP) $(DEPENDMODULES) $(DEPENDH) Makefile
