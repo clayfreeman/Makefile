@@ -13,6 +13,7 @@ install:
   - "cd tests && \
      mv main.cpp.example main.cpp && \
      mv modules/src/TestModule.cpp.example modules/src/TestModule.cpp && \
-     mv src/TestClass.cpp.example src/TestClass.cpp"
+     mv src/TestClass.cpp.example src/TestClass.cpp && \
+     cd .."
 
 script: cd tests && make CXX=g++-4.9 clean debug && ./main
