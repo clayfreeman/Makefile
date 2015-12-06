@@ -10,6 +10,9 @@ addons:
       - g++-4.9
 
 install:
-- mv tests/main.cpp.example tests/main.cpp
+  - "cd tests && \
+     mv main.cpp.example main.cpp \
+     mv modules/src/TestModule.cpp.example modules/src/TestModule.cpp \
+     mv src/TestClass.cpp.example src/TestClass.cpp"
 
 script: cd tests && make CXX=g++-4.9 clean debug && ./main
